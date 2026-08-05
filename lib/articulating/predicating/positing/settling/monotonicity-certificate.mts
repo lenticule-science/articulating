@@ -7,7 +7,7 @@
  * cohomology reader, and expose exactly the nonzero H¹ cells as coordination
  * obstructions. No protocol operation names participate in this certificate.
  */
-import type { FromSchema } from "../../../../primitive/schema.mjs";
+import type { FromJsonSchema } from "@red-cup-engineering/transform-json-schema-to-typescript-service/types";
 import { claim, mark, token } from "../../../utterance.mjs";
 import { cell as predicationCell, predicateOfClaim, type Cell } from "../../predication.mjs";
 import { natAdd, natZero, type Natural } from "./analysis/exact-number.mjs";
@@ -28,7 +28,7 @@ export const federatedCoverStatementSchema = {
   },
 } as const;
 
-export type FederatedCoverStatement = FromSchema<typeof federatedCoverStatementSchema>;
+export type FederatedCoverStatement = FromJsonSchema<typeof federatedCoverStatementSchema>;
 
 export interface CoordinationObstructionClass {
   readonly kind: "predication.cohomology.coordinationObstruction";

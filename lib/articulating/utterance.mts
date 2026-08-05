@@ -12,7 +12,7 @@
  * `UtteranceCarrier` is derived from the plain schema literal. The schema is the carrier's identity and runtime
  * law; this module supplies the declaration, constructors, and morphisms over it.
  */
-import type { FromSchema } from "../primitive/schema.mjs";
+import type { FromJsonSchema } from "@red-cup-engineering/transform-json-schema-to-typescript-service/types";
 
 const MarkSchema = {
   type: "object",
@@ -65,7 +65,7 @@ export const utteranceSchema = {
 } as const;
 
 /** The base admission carrier type, derived from `utteranceSchema`. */
-export type UtteranceCarrier = FromSchema<typeof utteranceSchema>;
+export type UtteranceCarrier = FromJsonSchema<typeof utteranceSchema>;
 
 /** The articulation cell carrier shape opened from an utterance. */
 const articulationCellShape = {

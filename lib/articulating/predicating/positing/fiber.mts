@@ -47,7 +47,7 @@ import {
 } from "./bilattice-charge.mjs";
 import { linearFusionValue, linearResiduumValue } from "./logic/bilattice-linear-logic.mjs";
 import { presheaf, type PositPresheaf } from "./settling/sheaf.mjs";
-import type { FromSchema } from "../../../primitive/schema.mjs";
+import type { FromJsonSchema } from "@red-cup-engineering/transform-json-schema-to-typescript-service/types";
 
 // The Meme carrier type is derived from the schema literal below; this module
 // supplies the runtime constructor and the morphisms over it. A charged
@@ -144,7 +144,7 @@ export const memeSchema = {
 } as const;
 
 /** A charged assignment within a fiber, derived from `memeSchema`. */
-export type Meme = FromSchema<typeof memeSchema> & { readonly cell: Cell; readonly charge: ChargeCarrier };
+export type Meme = FromJsonSchema<typeof memeSchema> & { readonly cell: Cell; readonly charge: ChargeCarrier };
 
 /** The fiber over one predicate: its label, entity set, and charged assignments. */
 export interface FiberAlgebra {

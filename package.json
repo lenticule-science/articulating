@@ -25,6 +25,9 @@
   "devDependencies": {
     "typescript": "^5.8.0"
   },
+  "dependencies": {
+    "@red-cup-engineering/transform-json-schema-to-typescript-service": "file:../../../../../../../engineering-services-section/services/computer-services-section/services/software-development-services-section/services/javascript-services-section/services/transform-json-schema-to-typescript-service"
+  },
   "exports": {
     ".": {
       "types": "./dist/lib/articulating/index.d.mts",
