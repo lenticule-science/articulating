@@ -1,0 +1,73 @@
+{
+  "name": "@lenticule-science/articulating",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Articulating: the Node and EVM law of admitted marks, utterance, free recursion, predication, positing, and settling.",
+  "main": "./dist/lib/articulating/index.mjs",
+  "types": "./dist/lib/articulating/index.d.mts",
+  "files": [
+    "content",
+    "services",
+    "src",
+    "lib",
+    "dist",
+    "foundry.toml"
+  ],
+  "scripts": {
+    "check:node": "tsc --noEmit",
+    "build:node": "tsc -p tsconfig.build.json",
+    "check": "npm run check:node && forge build --force",
+    "test": "npm run test:node && forge test",
+    "test:node": "node --test \"test/**/*.test.mjs\"",
+    "verify": "npm run check && npm run build:node && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/lib/articulating/index.d.mts",
+      "import": "./dist/lib/articulating/index.mjs"
+    },
+    "./predicating": {
+      "types": "./dist/lib/articulating/predicating/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/index.mjs"
+    },
+    "./predicating/positing": {
+      "types": "./dist/lib/articulating/predicating/positing/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/positing/index.mjs"
+    },
+    "./predicating/positing/settling": {
+      "types": "./dist/lib/articulating/predicating/positing/settling/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/positing/settling/index.mjs"
+    },
+    "./predicating/positing/settling/analysis": {
+      "types": "./dist/lib/articulating/predicating/positing/settling/analysis/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/positing/settling/analysis/index.mjs"
+    },
+    "./predicating/positing/settling/dynamics": {
+      "types": "./dist/lib/articulating/predicating/positing/settling/dynamics/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/positing/settling/dynamics/index.mjs"
+    },
+    "./predicating/geometry": {
+      "types": "./dist/lib/articulating/predicating/geometry/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/geometry/index.mjs"
+    },
+    "./predicating/geometry/spatial": {
+      "types": "./dist/lib/articulating/predicating/geometry/spatial/index.d.mts",
+      "import": "./dist/lib/articulating/predicating/geometry/spatial/index.mjs"
+    },
+    "./evm/Mark.json": "./data/forge-out/Mark.sol/Mark.json",
+    "./evm/Utterance.json": "./data/forge-out/Utterance.sol/Utterance.json",
+    "./evm/Articulating.json": "./data/forge-out/Articulating.sol/Articulating.json",
+    "./evm/ArticulationCell.json": "./data/forge-out/ArticulationCell.sol/ArticulationCell.json",
+    "./deployments/eip155-5615610.json": "./content/deployments/eip155-5615610.json",
+    "./*": {
+      "types": "./dist/lib/articulating/*.d.mts",
+      "import": "./dist/lib/articulating/*.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "license": "UNLICENSED"
+}

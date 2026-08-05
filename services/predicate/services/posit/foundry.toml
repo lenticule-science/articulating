@@ -1,0 +1,17 @@
+[profile.default]
+src = "src"
+test = "src"
+out = "data/forge-out"
+cache_path = "data/forge-cache"
+libs = []
+remappings = ["articulate/=../../../../src/", "predicate/=../../src/"]
+allow_paths = ["../../../../src", "../../src"]
+solc = "0.8.28"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+
+[fmt]
+line_length = 100
+tab_width = 4
+bracket_spacing = true

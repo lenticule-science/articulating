@@ -1,0 +1,19 @@
+{
+  "name": "@lenticule-science/posit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Positing on the EVM: the charge bilattice read off the articulation corners, with both order surfaces.",
+  "files": [
+    "content",
+    "services",
+    "src",
+    "foundry.toml"
+  ],
+  "scripts": {
+    "check": "forge build --force",
+    "test": "forge test",
+    "verify": "npm run check && npm test"
+  },
+  "license": "UNLICENSED"
+}
