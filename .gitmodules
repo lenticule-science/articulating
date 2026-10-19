@@ -1,0 +1,4 @@
+[submodule "predicate"]
+	path = services/predicate
+	url = https://github.com/lenticule-science/predicate.git
+	branch = main
