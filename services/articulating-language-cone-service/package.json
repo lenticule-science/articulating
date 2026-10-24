@@ -1,0 +1,57 @@
+{
+  "name": "@lenticule-science/articulating-language-cone-service",
+  "version": "0.1.6",
+  "type": "module",
+  "description": "Canonical RMN, signed A2A, and MCP projections of the Obsmetrologia articulating operation apex.",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./rmn": "./src/rmn-face.mjs",
+    "./a2a": "./src/a2a-face.mjs",
+    "./activitypub": "./src/serve-activitypub.mjs",
+    "./mcp": "./src/mcp-face.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/apex.mjs && node --check src/rmn-face.mjs && node --check src/a2a-face.mjs && node --check src/serve-activitypub.mjs && node --check src/mcp-face.mjs && node --check src/index.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "npm run check && npm test",
+    "prepack": "npm run verify"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "package.json",
+    "test"
+  ],
+  "bin": {
+    "serve-articulating-activitypub": "./src/serve-activitypub.mjs"
+  },
+  "dependencies": {
+    "@a2a-js/sdk": "1.0.0-beta.0",
+    "@lenticule-science/articulating": "0.2.2",
+    "@red-cup-engineering/a2a-agent-card-discovery-service": "0.5.0",
+    "@red-cup-engineering/a2a-agent-card-key-service": "0.4.0",
+    "@red-cup-engineering/a2a-rmn-part-service": "0.2.0",
+    "@red-cup-engineering/a2a-sovereign-operation-boundary-service": "0.3.0",
+    "@red-cup-engineering/semantic-content-identify-service": "0.2.7"
+  },
+  "semiotic": {
+    "operation": "articulate-utterance",
+    "precondition": "obsmetrologia.articulating.request",
+    "postcondition": "obsmetrologia.articulating.receipt"
+  },
+  "license": "UNLICENSED",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/articulating.git",
+    "directory": "services/articulating-language-cone-service"
+  },
+  "peerDependencies": {
+    "@red-cup-engineering/activitypub-services-section": "0.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@red-cup-engineering/activitypub-services-section": {
+      "optional": true
+    }
+  }
+}
